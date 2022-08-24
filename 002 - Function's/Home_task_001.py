@@ -23,20 +23,26 @@ for i in city_list:
 print(city_string)
 # ----------05----------
 working_string = '/bin:/usr/bin:/usr/local/bin'
-working_list = []
-working_word = ''
-for i in working_string:
-    if i == ':':
-        working_list.append(working_word)
-        working_word = ''
-    elif i == working_string[-1]:
-        working_list.append(working_word)
-    else:
-        working_word += i
-print(working_list)
+string = working_string.split(':')
+print(string)
 # ----------06----------
+for i in range(100):
+    if i % 7 == 0:
+        print(f'Numbers {i} divide on 7!')
+    else:
+        print(f'Numbers {i} not divide on 7!')
 # ----------07----------
+for row in range(5, 9):
+    for column in range(2, 5):
+        # if ((column * row) < 10):
+        #     print(" ", end="")
+        print(column * row, end=" ")
+    print()
 # ----------08----------
+object_list = ['Alex', 'Leonid', 'Ksenia', 'Tatiana', 'Andrei', 'Viktoria', 'Andrei', 'Kian', 'Olga',
+               'Ludmila', 'Luiza']
+for index, name in enumerate(object_list):
+    print(f'Name {name} number in list -{index}!')
 # ----------09----------
 # ----------10----------
 # ----------11----------
