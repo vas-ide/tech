@@ -44,7 +44,17 @@ object_list = ['Alex', 'Leonid', 'Ksenia', 'Tatiana', 'Andrei', 'Viktoria', 'And
 for index, name in enumerate(object_list):
     print(f'Name {name} number in list -{index}!')
 # ----------09----------
+object_list = ['Alex', 'Leonid', 'Ksenia', 'Tatiana','to-delete', 'Andrei', 'Viktoria','to-delete', 'Andrei', 'Kian',
+               'to-delete', 'Olga', 'Ludmila', 'Luiza']
+for i in object_list:
+    if i == 'to-delete':
+        object_list.remove('to-delete')
+print(object_list)
 # ----------10----------
+counter = 10
+while counter >= 1:
+    print(counter)
+    counter -= 1
 # ----------11----------
 
 
