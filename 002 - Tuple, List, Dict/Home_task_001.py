@@ -56,6 +56,15 @@ while counter >= 1:
     print(counter)
     counter -= 1
 # ----------11----------
+additional_list = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]  # matrix 3- 4
+for row in additional_list:
+    print(row)
+    for element in row:
+        print('Element - ', element)
 
 
 
