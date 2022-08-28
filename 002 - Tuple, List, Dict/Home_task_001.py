@@ -13,6 +13,7 @@ print(max(new_tuple))
 print(min(new_tuple))
 # ----------04----------
 city_list = ['Eartsh', 'Russia', 'Moscow']
+# print(" -> ".join(words))
 city_string = ''
 for i in city_list:
     if i == city_list[-1]:
