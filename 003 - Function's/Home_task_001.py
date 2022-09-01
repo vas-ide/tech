@@ -83,16 +83,16 @@ human_flag(string_for_example, False)
 # __________07_________
 def sum_string(*args, glue=':'):
     new_str_sum = ''
-    if type(args) == str and len(args) > 3:
-        if len(new_str_sum) > 3:
-            new_str_sum += args
-            new_str_sum += glue
-        else:
-            new_str_sum += args
+    for i in args:
+        if type(i) == str and len(i) > 3:
+            if len(new_str_sum) > 3:
+                new_str_sum += glue
+                new_str_sum += i
+            else:
+                new_str_sum += i
     print(new_str_sum)
-    return new_str_sum
+    # return new_str_sum
 sum_string('12345', '12', '6789', '0', '9876', '56', '54321')
-
 # __________08__________
 # __________09__________
 # __________10__________
