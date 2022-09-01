@@ -52,7 +52,7 @@ except ZeroDivisionError as some_var:
 try:
     d = {'key': 23}
     print(d['does not exist'])
-except ZeroDivisionError:
+except KeyError:
     print("This won't be called")
 
 try:
