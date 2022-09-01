@@ -55,10 +55,10 @@ def listed_upg(list_upg):
     print(f'Normal --- {list_upg}')
     try:
         type(list_upg) == list
-        sum_list = 0
+        multiple_list = 1
         for i in list_upg:
-            sum_list += i
-        print(f'SUM --- {sum_list}')
+            multiple_list *= i
+        print(f'SUM --- {multiple_list}')
     except TypeError as t:
         print(t)
 
