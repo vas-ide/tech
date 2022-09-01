@@ -50,12 +50,49 @@ def human_flag(lst, flag=True):
                 new_lst.append(i)
         print(f'False {new_lst}')
         return False
-list_for_example = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-human_flag(list_for_example, True)
-human_flag(list_for_example, False)
+string_for_example = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+human_flag(string_for_example, True)
+human_flag(string_for_example, False)
 # __________05__________
+def max_and_min_numbers(*args):
+    min_and_max_lst = []
+    for i in args:
+        if type(i) == int or type(i) == float:
+            min_and_max_lst.append(i)
+    print(max(min_and_max_lst))
+    print(min(min_and_max_lst))
+max_and_min_numbers(1, 0.2, 45, 8, 86, 5)
+max_and_min_numbers(1, 0.2, 45, 8, 86, 5, 'sus')
 # __________06__________
+def human_flag(string, flag=True):
+    new_string = ''
+    if flag == True:
+        for i in string:
+            new_string += i.upper()
+        print(new_string)
+        return new_string
+
+    if flag == False:
+        for i in string:
+            new_string += i.lower()
+        print(new_string)
+        return False
+string_for_example = 'Hello my friend. My name is Alex. I am 35 e.o.'
+human_flag(string_for_example, True)
+human_flag(string_for_example, False)
 # __________07_________
+def sum_string(*args, glue=':'):
+    new_str_sum = ''
+    if type(args) == str and len(args) > 3:
+        if len(new_str_sum) > 3:
+            new_str_sum += args
+            new_str_sum += glue
+        else:
+            new_str_sum += args
+    print(new_str_sum)
+    return new_str_sum
+sum_string('12345', '12', '6789', '0', '9876', '56', '54321')
+
 # __________08__________
 # __________09__________
 # __________10__________
