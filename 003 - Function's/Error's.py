@@ -37,7 +37,21 @@ elif number > 10:
 
 
 
-
+# vvod = input('Введите любое число:')
+# n = int(vvod)
+# try:
+#     if n < 0:
+#         raise TypeError ('Число меньше нуля')
+#     if n > 10:
+#         raise IndexError ('Число больше десяти')
+#     if n % 2 == 0:
+#         raise ValueError ('Число четное')
+# except TypeError :
+#     print('Число меньше нуля')
+# except IndexError :
+#     print('Число больше десяти')
+# except ValueError :
+#     print('Число четное')
 
 
 

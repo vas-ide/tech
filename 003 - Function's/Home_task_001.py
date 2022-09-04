@@ -34,6 +34,12 @@ def max_num(num1, num2, num3):
     max2 = max(work_list)
     print(f'First max number = {max1}, Second max number = {max2}')
 max_num(10, 15, 20)
+
+# def function(x,y,z):
+#     lst = [x,y,z]
+#     lst.sort()
+#     print(lst[1],lst[2])
+# function(8,5,10)
 # __________04__________
 def human_flag(lst, flag=True):
     new_lst = []
