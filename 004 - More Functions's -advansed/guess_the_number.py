@@ -4,7 +4,7 @@ generate_the_number = random.randint(0, 1000)
 def guess_the_number():
     try:
         number = int(input('Input the Number !'))
-    except Exception:
+    except ValueError:
         number = int(input('Input the Number Correctly !'))
     if number == generate_the_number:
         print(f'You vin !!!')
