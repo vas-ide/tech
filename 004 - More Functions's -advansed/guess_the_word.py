@@ -1,11 +1,15 @@
 import random
+NAMES = ['Alexei', 'Ksenia', 'Leonid', 'Tatiana', 'Andrei', 'Viktoria', 'Olga', 'Kian', 'Ludmila', 'Luiza']
 
 def create_word():
-    some_name_list = ['Alexei', 'Ksenia', 'Leonid', 'Tatiana', 'Andrei', 'Viktoria', 'Olga', 'Kian', 'Ludmila', 'Luiza']
-    random_position = random.randint(0, len(some_name_list))
-    guess_word_initial = some_name_list[random_position - 1]
-    print(guess_word_initial)
-    return guess_word_initial
+    # some_name_list = ['Alexei', 'Ksenia', 'Leonid', 'Tatiana', 'Andrei', 'Viktoria', 'Olga', 'Kian', 'Ludmila', 'Luiza']
+    # random_position = random.randint(0, len(some_name_list))
+    # guess_word_initial = some_name_list[random_position - 1]
+    # print(guess_word_initial)
+    # return guess_word_initial
+    word = random.choice(NAMES)
+    print(word)
+    return word
 
 def guess_word():
     word_printed = '-' * len(guess_word_general)
