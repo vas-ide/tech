@@ -26,7 +26,15 @@ def shuffle_field():
     """
     field = list(range(1, 17))
     field[-1] = EMPTY_MARK
-    random.shuffle(field)
+    # random.shuffle(field)
+    total_moves = 100
+    possible_moves = list(MOVES.keys())
+    for move in range(total_moves):
+        random_move = random.choice(list(MOVES.keys()))
+        try:
+            field = perform_move(field, random_move)
+        except IndexError:
+            continue
     return field
 
 
