@@ -17,9 +17,9 @@ class Car:
 
 
 
-t = TestClass()
+t = Car('red')
 
-t1 = TestClass()
+t1 = Car(color='blue')
 
 
 # Constructor can have parameters
@@ -32,7 +32,7 @@ class Table:
 
 t = Table(4)
 t1 = Table(3)
-
+ 
 
 # But we need to save them into the fields!
 
