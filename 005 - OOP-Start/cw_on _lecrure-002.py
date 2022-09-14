@@ -28,7 +28,7 @@ class Numbers:
             p = self.list_numbers[0] + self.list_numbers[1] + self.list_numbers[2]
             print(f'Triangle P = {p}')
         elif len(self.list_numbers) == 4:
-            p =   p = self.list_numbers[0] + self.list_numbers[1] + self.list_numbers[2] + self.list_numbers[3]
+            p = p = self.list_numbers[0] + self.list_numbers[1] + self.list_numbers[2] + self.list_numbers[3]
             print(f'Polygon P = {p}')
 
 numbers = Numbers()
