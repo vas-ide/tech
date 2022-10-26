@@ -93,4 +93,4 @@ def my_custom_func5(string,case=True):
 	else:
 		return string.lower()
 
-print(my_custom_func5('test', False))
+print(my_custom_func5('test-ip', False))
