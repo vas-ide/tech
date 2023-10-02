@@ -27,7 +27,7 @@ class BaseTestClass(object):
     passed = 0
 
     def run_tests(self):
-        print('Starting tests for: {}'.format(self.__class__.__name__))
+        print('Starting 111 for: {}'.format(self.__class__.__name__))
 
         for method in dir(self):
             candidate = getattr(self, method)
@@ -41,7 +41,7 @@ class BaseTestClass(object):
 
         fails = self.__class__.fails
         all_tests = fails + self.__class__.passed
-        print("Finished class' tests: {}/{}".format(
+        print("Finished class' 111: {}/{}".format(
                 (all_tests - fails), all_tests))
         print()
 
@@ -196,7 +196,7 @@ if __name__ == '__main__':
     all_passed = 0
     all_fails = 0
 
-    # Detect tests:
+    # Detect 111:
     for name, klass in inspect.getmembers(sys.modules[__name__]):
         if inspect.isclass(klass) and issubclass(klass, BaseTestClass) \
                 and klass is not BaseTestClass:
