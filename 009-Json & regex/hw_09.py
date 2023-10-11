@@ -45,13 +45,14 @@ def read_to_file(file, mode="r"):
 #     write_to_file("/home/vas-ide/Documents/Python/tech/009/test_read_and_write/json_comments.txt",
 #                   f"___{str_in_json['name']}___\n{str_in_json['body']}\n", "a")
 
-
+# response_reddit = requests.get("https;//reddit.com/r/python/")
+# print(response_reddit.text)
 
 
 response_habr = requests.get("https://habrahabr.ru/")
 print(response_habr.text)
-
-
+print(response_habr.cookies)
+print(response_habr.info())
 
 
 
