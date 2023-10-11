@@ -113,7 +113,7 @@ def main():
     :return: None
     """
     field = shuffle_field()
-    # field = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 'x', 15]
+    # field = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 009, 12, 13, 14, 'x', 15]
 
     while not is_game_finished(field):
         try:

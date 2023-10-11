@@ -4,7 +4,7 @@ numbers_list = [25, 33, 1 , 11, 255, 55, 11, 2, 5, 121]
 new_numbers_list = numbers_list.sort()
 print(numbers_list)
 # ----------02----------
-new_dict = {1: '1', 11: '1-1', 111: '111', 1111: '11-11', 11111: '11111', 111111: '111-111'}
+new_dict = {1: '1', 11: '1-1', 111: '111', 1111: '009-009', 11111: '11111', 111111: '111-111'}
 for key, value in new_dict.items():
     print(key, value)
 # ----------03----------
@@ -56,7 +56,7 @@ counter = 10
 while counter >= 1:
     print(counter)
     counter -= 1
-# ----------11----------
+# ----------009----------
 additional_list = [
     [1, 2, 3, 4],
     [5, 6, 7, 8],
