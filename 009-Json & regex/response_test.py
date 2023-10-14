@@ -2,6 +2,7 @@
 
 
 import requests
+import re
 
 def get_habrahabr():
     url = "http://habrahabr.ru"
@@ -30,7 +31,7 @@ def get_habrahabr():
 
 
 def find_by_tag():
-    pattern = r"href="
+    pattern = r'href=.*"'
     params = {"tags": "link"}
     headers = {
         # "Accept" "application/xml",
@@ -39,10 +40,11 @@ def find_by_tag():
     url = "http://habrahabr.ru"
     response = requests.get(url=url, params=params, headers=headers)
     print(
-        response.status_code,
-        response.headers,
+        # response.status_code,
+        # response.headers,
         # response.content,
         response.text
+        # re.findall(pattern, response.text)
     )
 find_by_tag()
 
