@@ -17,7 +17,13 @@ for book in books:
     image_src_full = f"https://books.toscrape.com/{image}"
     title = book.find('h3').find("a")['title']
     price = book.find('div', attrs={"class": "product_price"}).find("p").text
-    print(f"{image_src_full:<90}{title:<100}{price}")
+    # print(f"{image_src_full:<90}{title:<100}{price}")
+    books_dict = {"image": image,
+                  "title": title,
+                  "price": price}
+    books_data.append(books_dict)
+
+[print(i) for i in books_data]
 
 
 
