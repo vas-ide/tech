@@ -1,4 +1,8 @@
+
+
 import traceback
+import os
+
 
 from flask import Flask, request
 from flask_wtf import FlaskForm
@@ -62,12 +66,16 @@ def e_password():
             return f"{{'status': 0, 'errors': {errors_lst}}}"
 
     if request.method == 'GET':
-        return 'Hello unknown User', 200
+        return 'Hello unknown User'
 
 
 @app.route('/serve/<path:filename>')
-def path_dir():
-    pass
+def path_dir(filename):
+    init_dir = os.listdir("../010-Flask/files")
+    if filename in init_dir:
+        with open(f"../010-Flask/files/{filename}") as file:
+            return file.read()
+
 
 
 if __name__ == "__main__":
