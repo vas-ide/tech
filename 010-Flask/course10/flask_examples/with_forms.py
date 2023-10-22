@@ -1,12 +1,16 @@
+
+from datetime import datetime
 from flask import Flask, request
 
 from threading import Lock
 # pip install flask-WTF
 from flask_wtf import FlaskForm
-from wtforms import StringField, validators
+from wtforms import StringField, DateField, validators
 
 
 class ContactForm(FlaskForm):
+    current_daytime = datetime.now()
+
     name = StringField(label='Name', validators=[
         validators.Length(min=4, max=25)
     ])
@@ -16,7 +20,12 @@ class ContactForm(FlaskForm):
     ])
     job = StringField(label='JOB', validators=[
         validators.Length(min=1, max=35),
-        validators.Optional()
+        validators.Optional(),
+        validators.AnyOf(values=["IT", "HR", "ATC"]),
+        validators.InputRequired()
+    ])
+    birthday = DateField(label='Birthday', validators=[
+        validators.DataRequired(current_daytime.month)
     ])
 
 
