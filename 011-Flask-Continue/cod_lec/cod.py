@@ -1,7 +1,11 @@
 import os
+import traceback
 from contextlib import contextmanager
-from flask import Flask, request
 from simple_settings import settings
+from flask import Flask, request
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, validators
+from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
 import random
 
 app = Flask(__name__)
@@ -10,28 +14,34 @@ app.config.update(
     SECRET_KEY='some-secret-key',
     WTF_CRRF_ENABLED=False,
 )
-
 FLASK_RANDOM_SEED = 15
+def next_number():
+    random.seed(FLASK_RANDOM_SEED)
+    while True:
+        numb = random.randint(1, 1000)
+        yield numb
+numbers=next_number()
+numb_lst = []
+@app.route('/', methods=['GET'])
+@app.route('/<int:number>', methods=['POST'])
+def index_page(number=None):
+    if request.method == 'GET':
+        for numb in numbers:
+            numb_lst.append(numb)
+            return f"The number is hidden ! ---{numb}---"
+    if request.method == 'POST':
+        # if number == numb_lst[-1]:
+        #     for numb in numbers:
+        #         numb_lst.append(numb)
+        if number == numb_lst[-1]:
+            return f"Congratulations Numb was={numb_lst[-1]}"
+        elif number > numb_lst[-1]:
+            return f"Try again >>>  Numb{numb_lst[-1]}"
+        elif number < numb_lst[-1]:
+            return f"Try again <<<  Numb{numb_lst[-1]}"
 
 
 
-list_of_nums = [1, 2, 3, 8, 15, 42]
-def get_even(list_of_nums= [1, 2, 3, 8, 15, 42]) :
-    for i in list_of_nums:
-        if i % 2 == 0:
-            yield i
-get_even()
-# @app.route('/', methods=['GET', 'POST'])
-# def index_page():
-#     random.seed(FLASK_RANDOM_SEED)
-#     number = None
-#     for counter in range(10000):
-#         if request.method == 'POST':
-#             return
-#         if request.method == 'GET':
-#             number = random.randint(1, 100)
-#             yield f"The number is hidden ! {number}", 200
-#
-#
-# if __name__ == '__main__':
-#     app.run()
+
+if __name__ == '__main__':
+    app.run()
