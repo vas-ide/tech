@@ -1,4 +1,4 @@
 from .development import *
-#DEBUG = False
+# DEBUG = False
 WTF_CSRF_ENABLED=True
 
