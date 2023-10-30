@@ -1,5 +1,9 @@
+
+import sqlalchemy
+# import SQLAlchemy
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
+
 
 from sqlalchemy.sql import func
 
@@ -12,7 +16,6 @@ app.config.update(
     # Database settings:
     SQLALCHEMY_DATABASE_URI='sqlite:///people.db',
     SQLALCHEMY_TRACK_MODIFICATIONS=False,
-
     WTF_CSRF_ENABLED=False
 )
 
@@ -22,10 +25,8 @@ db = SQLAlchemy(app)
 
 class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-
     name = db.Column(db.String(80), nullable=False)
     age = db.Column(db.Integer, nullable=False)
-
     job = db.Column(db.String(50))
 
     def __str__(self):

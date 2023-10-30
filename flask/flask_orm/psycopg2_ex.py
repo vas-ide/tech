@@ -10,10 +10,11 @@ import psycopg2
 
 try:
     conn = psycopg2.connect(
-        user='tceh',
-        database='tceh_db',
+        user='vas',
+        database='vas_db',
         host='localhost',
         port=5432,
+        password='31471',
     )
 except Exception as ex:
     print('I am unable to connect to the database', ex)
@@ -28,8 +29,8 @@ app.config.update({
 
 
 class ObservationForm(FlaskForm):
-    observation_date = fields.DateField(default=date.today)
-    people_available = fields.IntegerField(
+    shift_date = fields.DateField(default=date.today)
+    shift_number = fields.IntegerField(
         validators=[
             validators.NumberRange(min=0),
         ]
@@ -43,7 +44,7 @@ def index():
     if request.method == 'POST':
         form = ObservationForm(request.form)
         if form.validate():
-            od, pa = form.observation_date.data, form.people_available.data
+            od, pa = form.shift_date.data, form.shift_number.data
             # YOU SHOULD NEVER DO THIS!
             # cur.execute(
             #     "INSERT INTO public.observations(people_available) "
@@ -55,9 +56,9 @@ def index():
             cur.execute(
                 """INSERT INTO public.observations(
                     observation_date, people_available) VALUES (
-                    %(observation_date)s, %(people_available)s)""",
+                    %(date_shift)s, %(shift_number)s)""",
 
-                {'observation_date': od.strftime('%Y-%m-%d'), 'people_available': pa}
+                {'date_shift': od.strftime('%Y-%m-%d'), 'shift_number': pa}
             )
             conn.commit()  # why do we need this line?
             return str('posted')
