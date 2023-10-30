@@ -1,12 +1,9 @@
-
 import sqlalchemy
 # import SQLAlchemy
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
-
 from sqlalchemy.sql import func
-
 
 app = Flask(__name__)
 app.config.update(
@@ -14,7 +11,6 @@ app.config.update(
     SECRET_KEY='should always be secret',
 
     # Database settings:
-    # SQLALCHEMY_DATABASE_URI='sqlite:///people.db',
     SQLALCHEMY_DATABASE_URI='sqlite:///people.db',
     SQLALCHEMY_TRACK_MODIFICATIONS=False,
     WTF_CSRF_ENABLED=False
@@ -22,6 +18,7 @@ app.config.update(
 
 # http://flask-sqlalchemy.pocoo.org/2.1/quickstart/#a-minimal-application
 db = SQLAlchemy(app)
+app.app_context().push()
 
 
 class Person(db.Model):
@@ -31,7 +28,7 @@ class Person(db.Model):
     job = db.Column(db.String(50))
 
     def __str__(self):
-        return("<Person id - {}>".format(self.id))
+        return ("<Person id - {}>".format(self.id))
 
     def to_dict(self):
         return {
@@ -46,9 +43,9 @@ class Person(db.Model):
 def index():
     # It is pretty easy for some tasks:
     people = Person.query.all()
-    by_name = Person.query.filter_by(name='Sveta').first()
-    by_age = Person.query.filter(Person.age >= 30)
-    by_job = Person.query.filter(Person.job == 'HR')
+    # by_name = Person.query.filter_by(name='Sveta').first()
+    # by_age = Person.query.filter(Person.age >= 30)
+    # by_job = Person.query.filter(Person.job == 'HR')
 
     # And not so easy for others:
     sub = db.session.query(
@@ -59,12 +56,11 @@ def index():
     ).first()
 
     return jsonify([p.to_dict() for p in people])
-    #     jsonify({
+    # jsonify({
     #     'people': [p.to_json() for p in people],
     #     'by_name': by_name.to_json(),
     #     'by_age': [p.to_json() for p in by_age],
     #     'by_job': [p.to_json() for p in by_job],
-    #
     #     'youngest': youngest.to_json(),
     # })
 
