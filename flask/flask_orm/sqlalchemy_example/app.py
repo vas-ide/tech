@@ -55,7 +55,7 @@ def populate_db():
 
 
 if __name__ == '__main__':
-    from sqlalchemy_example.models import *
+    from tech.flask.flask_orm.sqlalchemy_example.models import *
     db.create_all()
 
     if User.query.count() == 0:
