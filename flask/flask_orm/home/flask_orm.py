@@ -31,38 +31,30 @@ class Person(db.Model):
         return ("<Person id - {}>".format(self.id))
 
     def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'age': self.age,
-            'job': self.job
-        }
+        return {'id': self.id,
+                'name': self.name,
+                'age': self.age,
+                'job': self.job}
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     # It is pretty easy for some tasks:
     people = Person.query.all()
-    # by_name = Person.query.filter_by(name='Sveta').first()
-    # by_age = Person.query.filter(Person.age >= 30)
-    # by_job = Person.query.filter(Person.job == 'HR')
+    by_name = Person.query.filter_by(name='Sveta').first()
+    by_age = Person.query.filter(Person.age >= 30)
+    by_job = Person.query.filter(Person.job == 'HR')
 
     # And not so easy for others:
-    sub = db.session.query(
-        func.min(Person.age).label('min_age')
-    ).subquery()
-    youngest = Person.query.join(
-        sub, sub.c.min_age == Person.age
-    ).first()
+    sub = db.session.query(func.min(Person.age).label('min_age')).subquery()
+    youngest = Person.query.join(sub, sub.c.min_age == Person.age).first()
 
-    return jsonify([p.to_dict() for p in people])
-    # jsonify({
-    #     'people': [p.to_json() for p in people],
-    #     'by_name': by_name.to_json(),
-    #     'by_age': [p.to_json() for p in by_age],
-    #     'by_job': [p.to_json() for p in by_job],
-    #     'youngest': youngest.to_json(),
-    # })
+    return jsonify({'people': [p.to_dict() for p in people],
+                    'by_name': by_name.to_dict(),
+                    'by_age': [p.to_dict() for p in by_age],
+                    'by_job': [p.to_dict() for p in by_job],
+                    'youngest': youngest.to_dict()})
+    # return jsonify([p.to_dict() for p in people])
 
 
 if __name__ == '__main__':
