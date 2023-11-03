@@ -1,33 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms.validators import DataRequired
+from wtforms import IntegerField, TextAreaField
+from wtforms.validators import DataRequired, length
 from wtforms_alchemy import ModelForm, fields
 
 
 class PostForm(FlaskForm):
-    id = fields.IntegerField(validators=[DataRequired()])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    id = IntegerField(label='ID', validators=[DataRequired()])
+    review = TextAreaField(label='Review', validators=[DataRequired(), length(5, 2500)])
