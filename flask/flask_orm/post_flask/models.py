@@ -13,7 +13,7 @@ from tech.flask.flask_orm.sqlalchemy_example.app import db
 class GuessBookItem(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     author_name = db.Column(db.String(80), nullable=True)
-    review = db.Column(db.String(), nullable=False)
+    review = db.Column(db.String(5, 2500), nullable=False)
     date_time = db.Column(db.DateTime, default=datetime.utcnow)
     active = db.Column(db.Boolean, default=True)
 
