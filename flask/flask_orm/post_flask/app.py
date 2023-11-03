@@ -1,5 +1,4 @@
-import datetime
-
+from datetime import datetime
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from tech.flask.flask_orm.post_flask import config
@@ -15,7 +14,9 @@ def index():
     from tech.flask.flask_orm.post_flask.forms import PostForm
 
     # posts = GuessBookItem.query.all()
-    tets_lst = [datetime.datetime.now()]
+    tets_lst = [datetime.now(),
+                datetime.utcnow()
+                ]
 
     return render_template('index.html',
                            # form=posts

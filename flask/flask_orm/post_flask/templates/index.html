@@ -5,7 +5,10 @@
     <title>Index</title>
 </head>
 <body>
-<h1>Htllo this's home-work for flask ORM </h1>
-{{ form }}
+<h1>Hello this's home-work for flask ORM </h1>
+
+{% for item in form %}
+<h3>{{ item }}</h3>
+{% endfor %}
 </body>
 </html>
