@@ -31,7 +31,7 @@ def read_to_file(file, mode="r"):
         print(info.read())
 
 
-# read_to_file("/home/vas-ide/Documents/Python/tech/009/test_read_and_write/test_info.txt")
+# read_to_file("/sessions/vas-ide/Documents/Python/tech/009/test_read_and_write/test_info.txt")
 
 
 #  Реализовать следующую логику: получать при помощи requests данные сервиса https://jsonplaceholder.typicode.com/

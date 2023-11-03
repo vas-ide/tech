@@ -43,7 +43,7 @@ def index():
 
         print(post.user)
 
-    return render_template('home.txt', posts=posts)
+    return render_template('sessions.txt', posts=posts)
 
 
 def populate_db():

@@ -32,7 +32,7 @@ def home():
         form = BlogPostForm()
 
     return render_template(
-        'home.html',
+        'sessions.html',
         form=form,
         items=all_items,
     )
