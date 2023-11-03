@@ -2,7 +2,7 @@
 
 from datetime import date
 
-from sqlalchemy_example.app import db
+from tech.flask.flask_orm.sqlalchemy_example.app import db
 
 
 class User(db.Model):

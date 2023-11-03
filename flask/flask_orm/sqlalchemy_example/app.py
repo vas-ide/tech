@@ -3,20 +3,20 @@
 from flask import Flask, request, render_template, flash
 from flask_sqlalchemy import SQLAlchemy
 
-import sqlalchemy_example.config as config
-
+from tech.flask.flask_orm.sqlalchemy_example import config
 
 app = Flask(__name__, template_folder='templates')
 app.config.from_object(config)
 
 # http://flask-sqlalchemy.pocoo.org/2.1/quickstart/#a-minimal-application
 db = SQLAlchemy(app)
+app.app_context().push()
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    from sqlalchemy_example.models import Post, User
-    from sqlalchemy_example.forms import PostForm
+    from tech.flask.flask_orm.sqlalchemy_example.models import User, Post
+    from tech.flask.flask_orm.sqlalchemy_example.forms import PostForm
 
     if request.method == 'POST':
         print(request.form)
@@ -56,7 +56,7 @@ def populate_db():
 
 
 if __name__ == '__main__':
-    from sqlalchemy_example.models import *
+    from tech.flask.flask_orm.sqlalchemy_example.models import *
     db.create_all()
 
     if User.query.count() == 0:
