@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="css/create.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='create.css')}}">
 <head>
     <meta charset="UTF-8">
     <title>Create</title>
 </head>
 <body>
-<div class="countainer"></div>
-<div class="form-all">
-    <form action="review-form">
-    <hr>
-    <label for="r-author">Name</label><br>
-    <hr>
-    <input type="text">
-    <hr>
-    <label for="r-text">Review</label>
-    <hr>
-    <textarea name="" id="" cols="100" rows="10"></textarea>
-    <hr>
-</form>
+<div class="countainer">
+    <div class="form-all">
+        <form action="review-form">
+            <ul class="ul-review">
+                <li class="li-review-label"><label for="r-author">Name</label></li>
+                <li class="li-review-input"><input type="text"></li>
+                <li class="li-review-label"><label for="r-text">Review</label></li>
+                <li class="li-review-text"><textarea name="" id="" cols="100" rows="10"></textarea></li>
+            </ul>
 
+        </form>
+    </div>
 </div>
 
 

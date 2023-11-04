@@ -42,7 +42,7 @@ while True:
         print('%s - Is a wrong answer.' % users_input)
     # _____5_____
     users_input = input('What language we need to learn for generate style in site? ').lower()
-    answer = 'css'
+    answer = 'static'
     if users_input == answer:
         print('%s - is true' % users_input)
         counter_answers += 1
