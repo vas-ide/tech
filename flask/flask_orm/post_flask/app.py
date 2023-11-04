@@ -9,8 +9,6 @@ from tech.flask.flask_orm.post_flask.models import GuessBookItem
 app = Flask(__name__)
 app.config.from_object(config)
 db = SQLAlchemy(app)
-
-
 # app.app_context().push()
 
 @app.route('/', methods=['GET', 'POST'])
@@ -18,18 +16,18 @@ def index():
     from tech.flask.flask_orm.post_flask.models import GuessBookItem
     from tech.flask.flask_orm.post_flask.forms import PostForm
 
-    # form = PostForm(request.form)
-    #
-    # post = GuessBookItem(**form.data)
-    # db.session.add(post)
-    # db.session.commit()
+    form = PostForm(request.form)
 
-    # posts = GuessBookItem.query.all()
+    post = GuessBookItem(**form.data)
+    db.session.add(post)
+    db.session.commit()
+
+    posts = GuessBookItem.query.all()
     tes_lst = [datetime.now(), datetime.utcnow()]
 
     return render_template('index.html',
-                           # form=posts
-                           form=tes_lst
+                           form=posts
+                           # form=tes_lst
                            )
 
 
