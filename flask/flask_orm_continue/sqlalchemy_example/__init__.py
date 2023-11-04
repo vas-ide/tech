@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-__author__ = "VAS"
+__author__ = 'sobolevn'
