@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config.from_object(config)
 db = SQLAlchemy(app)
 # db.init_app(app)
-db.create_all()
+# db.create_all()
 # app.app_context().push()
 
 @app.route('/', methods=['GET', 'POST'])
