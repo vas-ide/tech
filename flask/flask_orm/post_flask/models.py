@@ -1,13 +1,6 @@
 
-
-
-
-
-
-
 from datetime import datetime
-from tech.flask.flask_orm.sqlalchemy_example.app import db
-
+from tech.flask.flask_orm.post_flask.app import db
 
 
 class GuessBookItem(db.Model):

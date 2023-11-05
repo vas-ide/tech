@@ -1,10 +1,6 @@
-from flask_wtf import FlaskForm
-from wtforms import IntegerField, TextAreaField
-from wtforms.validators import DataRequired, length
-from wtforms_alchemy import ModelForm, fields
+from wtforms_alchemy import ModelForm
 
 from tech.flask.flask_orm.post_flask.models import GuessBookItem
-from tech.flask.flask_orm.sqlalchemy_example.models import Post
 
 
 # class PostForm(FlaskForm):
