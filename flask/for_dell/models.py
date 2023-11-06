@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from app import db
+from tech.flask.flask_orm_posts.database import db
 
 
 class GuessBookItem(db.Model):

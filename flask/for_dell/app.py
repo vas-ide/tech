@@ -1,35 +1,33 @@
+import traceback
+from datetime import datetime
+
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-import config
 
+from tech.flask_orm_posts import config
+from tech.flask.flask_orm_posts.models import GuessBookItem
 
 app = Flask(__name__)
 app.config.from_object(config)
 db = SQLAlchemy(app)
+# app.app_context().push()
+
+
 
 @app.route('/')
 def index():
-
-
-    # form = PostForm(request.form)
-    #
-    # post = GuessBookItem(**form.data)
-    # db.session.add(post)
-    # db.session.commit()
-    # posts = GuessBookItem.query.all()
-    # tes_lst = [datetime.now(), datetime.utcnow()]
+    from tech.flask.flask_orm_posts.models import GuessBookItem
+    posts = GuessBookItem.query.all()
+    time_lst = [datetime.now(), datetime.utcnow()]
 
     return render_template('index.html',
-                           # form=posts
-                           # form=tes_lst
+                           date=time_lst,
+                           # posts=posts
                            )
-
 
 
 @app.route('/create', methods=['GET', 'POST'])
 def create():
-    from models import GuessBookItem
-
     if request.method == "GET":
         return render_template('create.html')
     if request.method == "POST":
@@ -39,9 +37,9 @@ def create():
         try:
             db.session.add(add_review)
             db.session.commit()
-            return redirect('create.html')
-        except:
-            return f"Some Error"
+            return redirect('/')
+        except Exception as e:
+            return f"Error - {e} \n {traceback.print_exc()}"
 
 
 if __name__ == '__main__':
