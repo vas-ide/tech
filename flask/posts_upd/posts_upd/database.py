@@ -1,5 +1,7 @@
+
+
 from flask_sqlalchemy import SQLAlchemy
 
-from tech.flask_orm_posts.app import app
+from posts_upd import app
 
 db = SQLAlchemy(app)

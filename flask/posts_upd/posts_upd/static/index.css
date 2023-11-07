@@ -1,12 +1,21 @@
 
-html{
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: slategrey;
+}
+
+html {
     font-family: Ebrima sans-serif;
     background-color: cornsilk;
     color: slategrey;
 }
 
 
-.countainer{
+.countainer {
     max-width: 1200px;
     max-height: 1200px;
     margin-right: auto;
@@ -16,8 +25,19 @@ html{
     font-size: 15px;
 }
 
-.main-title{
-    margin-top: 100px;
+.href-review {
+    margin-top: 50px;
+    text-align: center;
+
+}
+
+.a-review {
+    font-size: inherit;
+
+}
+
+.main-title {
+    margin-top: 50px;
     margin-bottom: 100px;
     text-align: center;
 }

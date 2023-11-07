@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='index.css') }}">
+{% endblock %}
+{% block title %}
+    Post's
+{% endblock %}
+{% block body %}
+    <body>
+<div class="countainer">
+    <header>
+    <div class="href-review">
+        <p><a href="/create" class="a-review">Create.</a></p>
+    </div>
+    </header>
+</div>
+<div class="countainer">
+    <div class="information-view">
+        <h1 class="main-title">Review's.</h1>
+        {% for item in posts %}
+            <h3>{{ item }}</h3>
+        {% endfor %}
+    </div>
+</div>
+<footer>
+    <ul>
+        {% for item in time_lst %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</footer>
+
+</body>
+{% endblock %}
+
+
+

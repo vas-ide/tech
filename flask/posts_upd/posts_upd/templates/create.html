@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='create.css') }}">
+{% endblock %}
+{% block title %}Create{% endblock %}
+{% block body %}
+    <div class="countainer">
+        <div class="form-all">
+            <form method="post">
+                <ul class="ul-review">
+                    <li class="li-review-label"><label for="r-author">Name</label></li>
+                    <li class="li-review-input"><input name="author" id="author" ></li>
+                    <li class="li-review-label"><label for="r-text">Review</label></li>
+                    <li class="li-review-text"><textarea name="review" id="review" cols="100" rows="10"></textarea></li>
+                </ul>
+                <input type="submit" class="btn-review" value="Send">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
