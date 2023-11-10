@@ -1,0 +1,16 @@
+
+
+.countainer {
+    max-width: 1200px;
+    max-height: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
+}
+
+.footer-date{
+    display: flex;
+    justify-content: center;
+}

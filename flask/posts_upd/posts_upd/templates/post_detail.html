@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='post_detail.css') }}">
+{% endblock %}
+{% block title %}Post-Details{% endblock %}
+{% block body %}
+    <div class="countainer">
+        <h4>{{ post.author_name }}</h4>
+        <p>{{ post.review }}</p>
+    </div>
+{% endblock %}
+{% block footer %}{% endblock %}

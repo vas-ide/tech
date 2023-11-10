@@ -11,8 +11,11 @@ from posts_upd.models import GuessBookItem
 
 @app.route('/')
 def index():
-    posts = GuessBookItem.query.all()
-    time_lst = [datetime.now(), datetime.utcnow()]
+    posts = GuessBookItem.query.order_by(GuessBookItem.author_name.desc()).where(GuessBookItem.active == 1).all()
+    current_date = datetime.now().date()
+    time_Mos = f"MOS - {datetime.now().time()}"[0:-7]
+    time_UTC = f"UTC - {datetime.utcnow().time()}"[0:-7]
+    time_lst = [current_date, time_UTC, time_Mos]
 
     return render_template('index.html',
                            time_lst=time_lst,
@@ -20,9 +23,14 @@ def index():
                            )
 
 
+@app.route('/posts/<int:id>')
+def posts_detail(id):
+    post = GuessBookItem.query.get(id)
+    return render_template('post_detail.html', post=post)
+
+
 @app.route('/create', methods=['GET', 'POST'])
 def create():
-
     if request.method == "POST":
         author_name = request.form['author']
         review = request.form['review']

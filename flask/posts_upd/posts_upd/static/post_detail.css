@@ -15,6 +15,7 @@ html {
 }
 
 
+
 .countainer {
     max-width: 1200px;
     max-height: 1200px;
@@ -25,28 +26,23 @@ html {
     font-size: 15px;
 }
 
-.ul-review {
+.ul-review{
     flex: 1 1 33%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style: none;
     margin-bottom: 100px;
 }
 
-.li-review {
-    margin-bottom: 25px;
-    margin-left: 20px;
-    /*margin-right: 10px;*/
-    padding: 0;
+.li-review{
     display: flex;
-    width: 250px;
+    width: 150px;
     height: 200px;
     border: slategrey 1px solid;
     border-radius: 15px;
 }
 
-.block-review {
+.block-review{
     flex: 1 1 33%;
     display: flex;
     flex-direction: column;
@@ -71,12 +67,10 @@ html {
     text-align: center;
 }
 
-.btn-details {
+.btn-details{
     color: burlywood;
 }
-
-.ul-footer {
-    margin-right: 35px;
+.ul-footer{
     list-style: none;
     text-align: center;
 }
