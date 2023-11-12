@@ -1,5 +1,0 @@
-This is a header for reports.
-{{ another_data }}
-It is stored in the other file.
-
-Why? Because we can.
