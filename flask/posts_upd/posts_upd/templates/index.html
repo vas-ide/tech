@@ -1,49 +1,54 @@
 {% extends 'base.html' %}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='base.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='index.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='base.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='index.css') }}">
 {% endblock %}
 {% block title %}
-    Post's
+Post's
 {% endblock %}
 {% block body %}
-    <div class="countainer">
-        <header>
-            <div class="href-review">
-                <p><a href="/create" class="a-review">Create.</a></p>
-            </div>
-        </header>
-    </div>
-    <div class="countainer">
-        <div class="information-view">
-            <h1 class="main-title">Review's.</h1>
-            <div>
-                <ul class="ul-review">
-                    {% for item in posts %}
-                        <li class="li-review">
-                            <div class="block-review">
-                                <h4>{{ item.author_name }}</h4>
-                                <p>{{ item.review|truncate(25) }}</p>
-                                <a href="/posts/{{ item.id }}" class="dtn btn-details"> Полная информация</a>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+<div class="countainer">
+    <header>
+        <div class="href-review">
+            <p><a href="/create" class="a-review">Create.</a></p>
         </div>
-    </div>
-{% endblock %}
-{% block footer %}
-    {{ super() }}
-    <div class="countainer">
-        <footer>
-            <ul class="ul-footer">
-                {% for item in time_lst %}
-                    <li>{{ item }}</li>
+    </header>
+</div>
+<div class="countainer">
+    <div class="information-view">
+        <h1 class="main-title">Review's.</h1>
+        <div>
+            <ul class="ul-review">
+                {% for item in posts %}
+                <li class="li-review">
+                    <div class="block-review">
+                        {% for user in users %}
+                        {% if user.id == item.user_id %}
+                        <h3>{{ user.username }}</h3>
+                        {% endif %}
+                        {% endfor %}
+                        <h4>{{ item.title }}</h4>
+                        <p>{{ item.review|truncate(25) }}</p>
+                        <a href="/posts/{{ item.id }}" class="dtn btn-details"> Полная информация</a>
+                    </div>
+                </li>
                 {% endfor %}
             </ul>
-        </footer>
+        </div>
     </div>
+</div>
+{% endblock %}
+{% block footer %}
+{{ super() }}
+<div class="countainer">
+    <footer>
+        <ul class="ul-footer">
+            {% for item in time_lst %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </footer>
+</div>
 {% endblock %}
 
 

@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, length
 
 
 from wtforms_alchemy import ModelForm
-from posts_upd.models import GuessBookItem
+from posts_upd.models import Review, User, Answer
 
 
 # class RegistrationForm(Form):
@@ -25,6 +25,21 @@ from posts_upd.models import GuessBookItem
 #     date_time = DateField('Date-Time', validators=[DataRequired()])
 #     active = BooleanField('Available', validators=[DataRequired()])
 
-class PostForm(ModelForm):
+# class UserForm(ModelForm):
+#     class Meta:
+#         model = User
+
+
+class ReviewForm(ModelForm):
     class Meta:
-        model = GuessBookItem
+        model = Review
+        include = [
+            'user_id',
+        ]
+
+class AnswerForm(ModelForm):
+    class Meta:
+        model = Answer
+        include = [
+            'review_id',
+        ]

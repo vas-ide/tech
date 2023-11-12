@@ -26,52 +26,7 @@ html {
     font-size: 15px;
 }
 
-.ul-review{
-    flex: 1 1 33%;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    margin-bottom: 100px;
-}
-
-.li-review{
-    display: flex;
-    width: 150px;
-    height: 200px;
-    border: slategrey 1px solid;
-    border-radius: 15px;
-}
-
-.block-review{
-    flex: 1 1 33%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.href-review {
-    margin-top: 50px;
-    text-align: center;
-
-}
-
-.a-review {
-    font-size: inherit;
-
-}
-
-.main-title {
-    margin-top: 50px;
-    margin-bottom: 100px;
-    text-align: center;
-}
-
-.btn-details{
-    color: burlywood;
-}
-.ul-footer{
-    list-style: none;
+.post-main-author{
     text-align: center;
 }
 

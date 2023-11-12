@@ -33,3 +33,7 @@ class Post(db.Model):
 
     def __str__(self):
         return '<Post %r>' % self.title
+
+
+
+
