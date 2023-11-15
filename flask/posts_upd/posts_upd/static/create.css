@@ -6,8 +6,8 @@
 
 html{
     font-family: Ebrima sans-serif;
-    background-color: cornsilk;
     color: slategrey;
+
 }
 
 ul{
@@ -27,19 +27,21 @@ ul{
     font-size: 15px;
 }
 
+.about-back{
+    margin-top: 25px;
+}
+
+.back{
+    text-decoration: none;
+    color: black;
+}
+
 .main-title{
     margin-top: 100px;
     margin-bottom: 100px;
     text-align: center;
 }
 
-.li-review-label{
-    font-size: xx-large;
-    text-align: center;
+.form-all{
+    margin-top: 50px;
 }
-
-.li-review-input{
-    text-align: center;
-}
-
-

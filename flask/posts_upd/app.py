@@ -11,7 +11,7 @@ from posts_upd.models import Review, User, Answer
 
 @app.route('/')
 def index():
-    posts = Review.query.order_by().where(Review.active == 1).all()
+    posts = Review.query.order_by().where(Review.active == 1).limit(8).all()
     users = User.query.all()
     current_date = datetime.now().date()
     time_Mos = f"MOS - {datetime.now().time()}"[0:-7]

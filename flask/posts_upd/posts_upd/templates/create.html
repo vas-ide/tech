@@ -1,27 +1,49 @@
 {% extends 'base.html' %}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='create.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='create.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='bootstrap.css') }}">
 {% endblock %}
 {% block title %}Create{% endblock %}
 {% block body %}
-    <div class="countainer">
-        <div class="about-back">
-            <a href="/">Back</a>
-        </div>
-        <div class="form-all">
-            <form method="post">
-                <ul class="ul-review">
-                    <li class="li-review-label"><label for="r-author">Name</label></li>
-                    <li class="li-review-input"><input name="author" id="author" ></li>
-                    <li class="li-review-label"><label for="r-title">Title</label></li>
-                    <li class="li-review-input"><input name="title" id="title" ></li>
-                    <li class="li-review-label"><label for="r-text">Review</label></li>
-                    <li class="li-review-text"><textarea name="review" id="review" cols="100" rows="10"></textarea></li>
-                </ul>
-                <input type="submit" class="btn-review" value="Send">
-            </form>
-        </div>
+<div class="container-xl">
+    <div class="about-back">
+        <a href="/" class="back link-underline-dark">Назад</a>
     </div>
+    <div class="form-all ">
+        <form method="post">
+            <div class="mb-3">
+                <label for="author" class="form-label">Автор.</label>
+                <input type="author" class="form-control" name="author" id="author" aria-describedby="authorHelp">
+                <div id="authorHelp" class="form-text">Введите имя авторизованого пользователя.</div>
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Тема.</label>
+                <input type="title" class="form-control" name="title" id="title" aria-describedby="titleHelp">
+                <div id="titleHelp" class="form-text">Введите тему обсуждения.</div>
+            </div>
+            <label for="review" class="form-label">Описание.</label>
+<!--            <input type="review" class="form-control" name="review" id="review" aria-describedby="reviewHelp">-->
+            <textarea class="form-control" name="review" id="review" cols="30" rows="10"></textarea>
+            <div id="reviewHelp" class="form-text">Введите текст поста.</div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary" value="Send">Отправить</button>
+        </form>
+        <!--            <form method="post">-->
+        <!--                <ul class="ul-review">-->
+        <!--                    <li class="li-review-label"><label for="r-author">Name</label></li>-->
+        <!--                    <li class="li-review-input"><input name="author" id="author" ></li>-->
+        <!--                    <li class="li-review-label"><label for="r-title">Title</label></li>-->
+        <!--                    <li class="li-review-input"><input name="title" id="title" ></li>-->
+        <!--                    <li class="li-review-label"><label for="r-text">Review</label></li>-->
+        <!--                    <li class="li-review-text"><textarea name="review" id="review" cols="100" rows="10"></textarea></li>-->
+        <!--                </ul>-->
+        <!--                <input type="submit" class="btn-review" value="Send">-->
+        <!--            </form>-->
+    </div>
+</div>
 {% endblock %}
 {% block footer %}{% endblock %}
 
