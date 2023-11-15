@@ -1,0 +1,719 @@
+
+
+@font-face {
+    font-weight: 300;
+    font-family: "Muller";
+    src: url(/html/Logoona-hotels/fonts/MullerLight.woff) format("woff");
+    src: url(/html/Logoona-hotels/fonts/MullerLight.woff2) format("woff2");
+}
+@font-face {
+    font-weight: 400;
+    font-family: "Muller";
+    src: url(/html/Logoona-hotels/fonts/MullerRegular.woff) format("woff");
+    src: url(/html/Logoona-hotels/fonts/MullerRegular.woff2) format("woff2");
+}
+@font-face {
+    font-weight: 500;
+    font-family: "Muller";
+    src: url(/html/Logoona-hotels/fonts/MullerMedium.woff) format("woff");
+    src: url(/html/Logoona-hotels/fonts/MullerMedium.woff2) format("woff2");
+}
+@font-face {
+    font-weight: 700;
+    font-family: "Muller";
+    src: url(/html/Logoona-hotels/fonts/MullerBold.woff) format("woff");
+    src: url(/html/Logoona-hotels/fonts/MullerBold.woff2) format("woff2");
+}
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-left: 25px;
+    margin-top: 250px;
+    width: 100px;
+    font-size: 66px;
+    line-height: 58px;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    max-width: 650px;
+}
+
+
+html {
+    font-family: Moller sans-serif;
+    background-color: #f1f1f1;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+    font-weight: 500;
+    line-height: 32px;
+    color: #666;
+}
+
+.container {
+    min-width: 1200px;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+}
+
+.section-heading {
+    margin-left: 44px;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 500;
+    color: #333;
+}
+
+
+
+/* Header */
+.header {
+    width: 100%;
+}
+
+.header-abave {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-abave-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-phone {
+    margin-left: 25px;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 700;
+    color:  #666;
+
+}
+
+.header-abave-right {
+    display: flex;
+    justify-content: end;
+}
+
+.private {
+    margin-right: 10px;
+    transform: translateY(+2px);
+}
+
+.header-below {
+    height: 70px;
+    width: 100%;
+    line-height: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px ;
+    background-color: #ffffff;
+    border: 0px solid #ffffff;
+    border-radius: 12px;
+}
+
+.header-nav-list {
+    margin-left: 20px;
+    display: flex;
+}
+
+.header-nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.header-nav-elements:not(:last-child) {
+    margin-right: 50px;
+}
+
+.header-search-section {
+    margin-right: 21px;
+    height: 48px;
+    width: 355px;
+    background-color: #f1f1f1;
+    border: 2px solid #f1f1f1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header-search-input {
+    margin-left: 20px;
+    width: 100%;
+    height: 100%;
+    
+    background-color: #f1f1f1;
+    border: 2px solid #f1f1f1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: none;
+}
+
+.header-search-input::placeholder {
+    color: #bebebe;
+}
+
+.header-search-img {
+    margin-right: 22px;
+    width: 25px;
+    height: 25px;
+    background: url(/html/Logoona-hotels/img/search.png) center center no-repeat;
+    background-size: contain;
+}
+
+/* Two section in one */
+
+.section-two {
+    margin-top: 70px;
+    display: flex;
+
+}
+
+.two-left {
+    margin-right: 54px;
+    flex: 1 1 50%;
+}
+
+.input-shield {
+    margin-bottom: 24px;
+    padding-left: 25px;
+    width: 518px;
+    height: 70px;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    color: #999;
+    outline: none;
+
+}
+
+.input-shield::placeholder {
+    color: #999;;
+}
+
+
+.search-room {
+    display: flex;
+    align-items: center;
+}
+
+.search-room-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 70px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #c93;
+    border-radius: 12px;
+    border: none;
+}
+
+.numb-rooms {
+    margin-left: 30px;
+    color: #c93;
+}
+
+.numb-text {
+    margin-left: 5px;
+    color: #999;
+}
+
+.all-rooms {
+    display: flex;
+}
+
+.two-right {
+
+    width: 595px;
+    height: 540px;
+
+}
+
+.section-lux-back {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.section-lux-back-img {
+    background-image: url(/html/Logoona-hotels/img/1.jpg);
+}
+
+
+
+/* About */
+
+.section-about {
+    width: 70%;
+    margin-top: 70px;
+}
+
+.about-text {
+    margin-left: 40px;
+}
+
+/* Servise */
+
+.section-service {
+    display: block;
+
+}
+
+.service-list {
+    flex: 1 1 auto;
+    display: flex;
+    /* flex-direction: column; */
+    /* flex-flow: column wrap; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 25px;
+    width: 572px;
+    min-height: 325px;
+    background-color: #ffffff;
+    border: 0px solid #ffffff;
+    border-radius: 12px;
+}
+
+.service-img {
+    width: 100%;
+    height: 165px;
+    display: flex;
+    border-radius: 12px 12px 0px 0px;
+}  
+
+.service-img-s1{
+    background-image: url(/html/Logoona-hotels/img/11.jpg);
+} 
+
+.service-img-s2{
+    background-image: url(/html/Logoona-hotels/img/21.jpg);
+} 
+
+.service-img-s3{
+    background-image: url(/html/Logoona-hotels/img/12.jpg);
+} 
+
+.service-img-s4{
+    background-image: url(/html/Logoona-hotels/img/22.jpg);
+} 
+
+.service-name {
+    margin-top: 36px;
+    margin-left: 44px;
+    font-size: 22px;
+    color: #c93;
+    display: flex;
+    align-items: center;
+
+}
+
+.golden-arr {
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    background: url(/html/Logoona-hotels/img/gold-arrow.svg) center center no-repeat;
+    background-size: contain;
+}
+
+.service-text {
+    margin-left: 44px;
+    width: 62%;
+    color: #333;
+}
+
+
+/* Advantages */
+
+
+.advantages-list {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.advantages-item {
+    margin-top: 24px;
+    width: 275px;
+    min-height: 275px;
+    background-color: #ffffff;
+    border: 0px solid #ffffff;
+    border-radius: 12px;
+}
+
+.advantages-img {
+    margin: 44px 0px 0px 44px;
+}
+
+.advantages-text {
+    margin-left: 44px;
+    width: 61%;
+    color: #333;
+}
+
+/* Accommodation */
+
+.accommodation-list {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.accommodation-item {
+    margin-top: 24px;
+    width: 373px;
+    height: 441px;
+    background-color: #ffffff;
+    border: 0px solid #ffffff;
+    border-radius: 12px;
+}
+
+.accommodation-item-all{
+    margin-top: 24px;
+    width: 373px;
+    height: 441px;
+    display: flex;
+    background-color: #ffffff;
+    border: 0px solid #ffffff;
+    border-radius: 12px;
+}
+
+.accommodation-img-all {
+    width: 100%;
+    height: 441px;
+    display: flex;
+    border-radius: 12px;
+}
+
+.accommodation-img-all-back {
+    background-image: url(/html/Logoona-hotels/img/83.jpg);
+}
+
+.accommodation-img {
+    width: 100%;
+    height: 217px;
+    display: flex;
+    border-radius: 12px 12px 0px 0px;
+} 
+
+.accommodation-text-all {
+    margin-left: 36px;
+    margin-top: 368px;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    font-size: 22px;
+    color: white;
+}
+
+.white-arr {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.accommodation-img-r1 {
+    background-image: url(/html/Logoona-hotels/img/61.jpg);
+}
+
+.accommodation-img-r2 {
+    background-image: url(/html/Logoona-hotels/img/62.jpg);
+}
+
+.accommodation-img-r3 {
+    background-image: url(/html/Logoona-hotels/img/63.jpg);
+}
+
+.accommodation-img-r4 {
+    background-image: url(/html/Logoona-hotels/img/71.jpg);
+}
+
+.accommodation-img-r5 {
+    background-image: url(/html/Logoona-hotels/img/72.jpg);
+}
+
+.accommodation-img-r6 {
+    background-image: url(/html/Logoona-hotels/img/73.jpg);
+}
+
+.accommodation-img-r7 {
+    background-image: url(/html/Logoona-hotels/img/81.jpg);
+}
+
+.accommodation-img-r8 {
+    background-image: url(/html/Logoona-hotels/img/82.jpg);
+}
+
+/* Accommodation */
+
+.price-star {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+    line-height: 1;
+}
+
+.accommodation-item-info-price {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.price {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 800;
+}
+
+.accommodation-item-info-star {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+ 
+
+.accommodation-item-info-name {
+    margin-top: 16px;
+    margin-bottom: 0px;
+    margin-left: 44px;
+    line-height: 1;
+}
+
+.accommodation-item-info-place {
+    margin-top: 16px;
+    margin-bottom: 0px;
+    margin-left: 44px;
+    line-height: 1;
+}
+
+.room-btn {
+    margin-top: 20px;
+    margin-left: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 41px;
+    font-size: 16px;
+    color: #c93;
+    background-color:  #fff;
+    border: 1px solid #c93;
+    border-radius: 12px;
+}
+
+
+/* Contacts */
+
+.section-contacts {
+    margin-left: 15px;
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts {
+    width: 472px;
+    height: 619px;
+   
+}
+
+.contacts-info {
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.contacts-item {
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    display: flex;
+    align-items: baseline;
+    color: #666;
+    border-bottom: 1px solid #e4e4e4;
+    
+}
+
+.contacts-item-heading {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.contacts-item-address {
+    margin-left: 78px;
+    margin-top: 26px;
+    margin-bottom: 28px;
+    font-style: normal;
+    /* width: 210px; */
+}
+
+
+.contacts-item-phone {
+    margin-left: 38px;
+    margin-top: 26px;
+    margin-bottom: 28px;
+    line-height: 24px;
+    width: 150px;
+    color: #c93;
+}
+
+
+.contacts-item-email {
+    margin-left: 78px;
+    margin-top: 26px;
+    margin-bottom: 28px;
+    /* width: 230px; */
+}
+
+.contacts-email {
+
+    line-height: 24px;
+
+}
+
+.golden-email {
+    color: #c93;
+}
+
+
+.contacts-item-graphick {
+    margin-left: 64px;
+    margin-top: 26px;
+    margin-bottom: 28px;
+    line-height: 24px;
+    width: 160px;
+}
+
+.follow-btn {
+    margin: 45px;
+    padding: 30px;
+    font-size: 16px;
+    color: #c93;
+    background-color:  #fff;
+    border: 1px solid #c93;
+    border-radius: 12px;
+    
+}
+
+.feedback {
+    margin-top: 115px;
+    margin-right: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+.form-feedback {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-search-section {
+    margin-right: 21px;
+    height: 48px;
+    width: 355px;
+    background-color: #f1f1f1;
+    border: 2px solid #f1f1f1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input-feedback {
+    margin-bottom: 23px;
+    padding-left: 20px;
+    width: 340px;
+    height: 70px;
+    background-color: white;
+    border: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: none;
+}
+
+.input-textarea {
+    padding-top: 20px;
+    padding-left: 20px;
+    width: 340px;
+    height: 110px;
+    background-color: white;
+    border: white;
+    border-radius: 12px;
+    outline: none;
+    resize: none;
+
+} 
+
+.input-feedback::placeholder {
+    color: #bebebe;
+}
+
+.feedback-btn {
+    margin-top: 23px;
+    padding: 26px 130px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #c93;
+    border-radius: 12px;
+    border: none;
+
+}
+
+/* Footer */
+
+
+.section-footer {
+    margin-top: 50px;
+    width: 100%;
+    height: 100px;
+}
