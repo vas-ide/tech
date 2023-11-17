@@ -1,11 +1,39 @@
+{% extends 'base.html' %}
 
-{% extends 'shift/base.html' %}
 
-
-{% block scc %} {% endblock %}
-{% block title %}Index{% endblock %}
-{% block header %} {% endblock %}
-{% block main %}
-<h3>This's start page for project shift!</h3>
+{% load static %}
+{% block scc %}
+<link rel="stylesheet" href="{% static 'shift/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'shift/bootstrap/css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'shift/bootstrap/css/index.css' %}">
 {% endblock %}
+{% block title %}Index{% endblock %}
+{% block header %}<h3>This's start page for project shift!</h3>
+<div class="countainer">
+    <ul>
+        <li>
+            <div>
+                <p>
+                    <a href="">Смены</a>
+                </p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p>
+                    <a href="">Сотрудники</a>
+                </p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p>
+                    <a href="">Управление</a>
+                </p>
+            </div>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+{% block main %}{% endblock %}
 {% block footer %} {% endblock %}

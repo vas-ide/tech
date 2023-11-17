@@ -6,7 +6,8 @@ from django.core.exceptions import ValidationError
 
 class ShiftForm(forms.Form):
     date = forms.DateField()
-    position = forms.CharField(max_length=100)
+    name = forms.CharField(min_length=10, max_length=150)
+    position = forms.CharField(min_length=5, max_length=100)
     difficultys = forms.FloatField()
     description = forms.CharField(max_length=1000)
 
