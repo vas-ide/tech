@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block scc %}
+<link rel="stylesheet" href="{% static 'staff/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'staff/bootstrap/css/bootstrap.css' %}">
+{% endblock %}
+{% block title %}Standart-messages.{% endblock %}
+{% block header %} <h1>Standart form for anonymous messages.</h1> {% endblock %}
+{% block main %}
+<div>
+    <form action="{% url 'standart_messages' %}" method="POST">
+        {% csrf_token %}
+        <ul>
+            {% for item in form %}
+            <li>
+                {{ item.name }}
+                {{ item }}
+            </li>
+             {% endfor %}
+            <li>
+                <button type="submit" class="">Submit</button>
+            </li>
+        </ul>
+        <!--    <div class="mb-3">-->
+        <!--        <label for="staff-date" class="form-label">Shift date.</label>-->
+        <!--        <input type="date" class="form-control" id="staff-date" aria-describedby="staff-date">-->
+        <!--        <div id="staff-date-help" class="form-text">Введите дату смены</div>-->
+        <!--    </div>-->
+        <!--    <div class="mb-3">-->
+        <!--        <label for="difficulty-of-staff" class="form-label">Difficulty of staff.</label>-->
+        <!--        <input type="difficulty" class="form-control" id="difficulty-of-staff">-->
+        <!--        <div id="difficulty-of-staff-help" class="form-text">Введите сложность мены от 0 до 10.0</div>-->
+        <!--    </div>-->
+        <!--    <div class="mb-3">-->
+        <!--        <label for="text-of-staff" class="form-label">Describe staff.</label>-->
+        <!--        <textarea name="text" class="form-control" id="text-of-staff" cols="30" rows="10"></textarea>-->
+        <!--        <div id="text-of-staff-help" class="form-text">Описание наиболее существенных моментов.</div>-->
+        <!--    </div>-->
+        <!--    <div class="mb-3 form-check">-->
+        <!--        <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+        <!--        <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
+        <!--    </div>-->
+        <!--    <button type="submit" class="btn btn-primary">Submit</button>-->
+    </form>
+</div>
+{% endblock %}
+{% block footer %} {% endblock %}

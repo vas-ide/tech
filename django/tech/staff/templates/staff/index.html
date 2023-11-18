@@ -3,9 +3,9 @@
 
 {% load static %}
 {% block scc %}
-<link rel="stylesheet" href="{% static 'shift/normalize.css' %}">
-<link rel="stylesheet" href="{% static 'shift/bootstrap/css/bootstrap.css' %}">
-<link rel="stylesheet" href="{% static 'shift/bootstrap/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'staff/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'staff/bootstrap/css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'staff/bootstrap/css/index.css' %}">
 {% endblock %}
 {% block title %}Index{% endblock %}
 {% block header %}<h3>This's start page for project shift!</h3>
@@ -14,21 +14,28 @@
         <li>
             <div>
                 <p>
-                    <a href="">Смены</a>
+                    <a href="shifts">Смены</a>
                 </p>
             </div>
         </li>
         <li>
             <div>
                 <p>
-                    <a href="">Сотрудники</a>
+                    <a href="employees">Сотрудники</a>
                 </p>
             </div>
         </li>
         <li>
             <div>
                 <p>
-                    <a href="">Управление</a>
+                    <a href="menagement">Управление</a>
+                </p>
+            </div>
+        </li>
+                <li>
+            <div>
+                <p>
+                    <a href="standart_messages">Заполнить типовое сообщение.</a>
                 </p>
             </div>
         </li>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block scc %}
+<link rel="stylesheet" href="{% static 'staff/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'staff/bootstrap/css/bootstrap.css' %}">
+{% endblock %}
+{% block title %}Shifts.{% endblock %}
+{% block header %}
+<div>
+    <ul>
+        {% for item in shift %}
+        <li>
+            {{ item.id }}
+            {{ item }}
+        </li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for item in shiftday %}
+        <li>
+            {{ item }}
+        </li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for item in employee %}
+        <li>
+
+            {{ item }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+{% block main %}{% endblock %}
+{% block footer %} {% endblock %}
