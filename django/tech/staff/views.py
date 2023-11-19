@@ -16,6 +16,7 @@ class Shifts(View):
         context = {
             "employee": Employee.objects.all(),
             "shift": Shift.objects.all(),
+            # "shiftday": ShiftDay.objects.all(),
             "shiftday": ShiftDay.objects.all(),
 
         }

@@ -24,8 +24,8 @@ class Shift(models.Model):
 class ShiftDay(models.Model):
     number = models.ForeignKey('Shift', on_delete=models.CASCADE)
     date = models.DateField(null=False, blank=False)
-    employee = models.ManyToManyField('Employee', related_name='employees')
-    # employee = models.ForeignKey('Employee', on_delete=models.CASCADE)
+    # employee = models.ManyToManyField('Employee', related_name='employee')
+    employee = models.ForeignKey('Employee', on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return f"{self.date} {self.number} {self.employee}"
