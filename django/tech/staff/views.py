@@ -14,10 +14,9 @@ class Shifts(View):
     def get(self, request):
 
         context = {
-            "employee": Employee.objects.all(),
+            # "employee": Employee.objects.all(),
             "shift": Shift.objects.all(),
             # "shiftday": ShiftDay.objects.all(),
-            "shiftday": ShiftDay.objects.all(),
 
         }
         return render(request, 'staff/shifts.html', context)

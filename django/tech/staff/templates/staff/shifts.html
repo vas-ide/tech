@@ -9,29 +9,37 @@
 {% block title %}Shifts.{% endblock %}
 {% block header %}
 <div>
+
+    {% if shift %}
     <ul>
         {% for item in shift %}
         <li>
-            {{ item.id }}
-            {{ item }}
+                        {{ item.number}}
+        </li>
+                <li>
+                        {{ item }}
         </li>
         {% endfor %}
     </ul>
-    <ul>
-        {% for item in shiftday %}
-        <li>
-            {{ item.employee.id }}
-        </li>
-        {% endfor %}
-    </ul>
+    {% endif %}
+    {% if employee %}
     <ul>
         {% for item in employee %}
         <li>
+            {{ item.id }}
 
             {{ item }}
         </li>
         {% endfor %}
     </ul>
+    {% endif %}
+    <!--    <ul>-->
+    <!--        {% for item in shiftday %}-->
+    <!--        <li>-->
+    <!--            {{ item.employee.id }}-->
+    <!--        </li>-->
+    <!--        {% endfor %}-->
+    <!--    </ul>-->
 </div>
 {% endblock %}
 {% block main %}{% endblock %}
