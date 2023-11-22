@@ -1,4 +1,7 @@
+import datetime
+
 from django.db import models
+from django.utils import timezone
 
 
 # Create your models here.
@@ -33,7 +36,7 @@ class StandartShift(models.Model):
 
 class ShiftDay(models.Model):
     number = models.ForeignKey('Shift', on_delete=models.PROTECT)
-    date = models.DateField(null=False, blank=False)
+    date = models.DateTimeField(default=timezone.now, null=False, blank=False)
 
     def __str__(self):
         return f"{self.date} {self.number}"
