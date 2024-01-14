@@ -22,5 +22,5 @@ from staff import views
 urlpatterns = [
     path('admin/', admin.site.urls, name="admin"),
 
-    path("staff/", include("staff.urls")),
+    path("staff/", include("staff.urls"), namespace="staff"),
 ]
